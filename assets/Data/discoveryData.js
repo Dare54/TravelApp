@@ -1,6 +1,6 @@
 const discoveryData = [
     {
-        id 'discover-1',
+        id: 'discover-1',
         title: 'Kayaking in the Tofino Sea',
         location: 'Canada',
         image: require('../images/kayak.png'),
