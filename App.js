@@ -5,10 +5,10 @@ import Details from './components/Details';
 import Liked from './components/Liked';
 
 import {NavigationContainer} from '@react-navigation/native';
-import {createStackNavigator} from '@react-navigation/stack';
+import {createNativeStackNavigator} from '@react-navigation/native-stack';
 import {createBottomTabNavigator} from '@react-navigation/bottom-tabs';
 
-const stack = createStackNavigator();
+const stack = createNativeStackNavigator();
 const Tab = createBottomTabNavigator();
 
 const TabNavigator = () => {
