@@ -3,9 +3,9 @@ import {View, Text} from 'react-native';
 
 const Liked = () => {
     return (
-        <view>
+        <View>
             <Text>Liked</Text>
-        </view>
+        </View>
     );
 };
 
