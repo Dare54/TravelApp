@@ -29,20 +29,34 @@ const TabNavigator = () => {
       tabBarShowLabel: false,
     }}
     >
-      <Tab.Screen name='Home' 
-      component={Home}
-      options={{tabBarIcon: ({color}) => (
-      <Ionicons name="home" size={32} color={color} />), 
+      <Tab.Screen 
+        name='Home' 
+        component={Home}
+        options={{tabBarIcon: ({color}) => (
+      <Ionicons 
+        name="home" 
+        size={32} 
+        color={color} />), 
     }}
       />
-      <Tab.Screen name='Liked' component={Liked}
-      options={{tabBarIcon: ({color}) => (
-      <Ionicons name="heart" size={32} color={color} />), 
+      <Tab.Screen 
+        name='Liked' 
+        component={Liked}
+        options={{tabBarIcon: ({color}) => (
+      <Ionicons 
+        name="heart" 
+        size={32} 
+        color={color} />), 
     }}
       />
-      <Tab.Screen name='Profile' component={Profile}
-      options={{tabBarIcon: ({color}) => (
-      <Ionicons name="person" size={32} color={color} />), 
+      <Tab.Screen 
+        name='Profile' 
+        component={Profile}
+        options={{tabBarIcon: ({color}) => (
+      <Ionicons 
+        name="person" 
+        size={32} 
+        color={color} />), 
     }}
       />
     </Tab.Navigator>

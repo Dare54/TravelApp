@@ -22,7 +22,7 @@ const Home = ({navigation}) => {
                             color={colors.black}
                             style={styles.menuIcon}
                         />
-                        <Image source={profile} style={styles.ProfileImage} />
+                        <Image source={profile} style={styles.profileImage} />
                     </View>
                 </SafeAreaView>
             </ScrollView>
@@ -34,7 +34,19 @@ const styles = StyleSheet.create({
     container: {
         flex: 1,
         color: colors.white,
-    }
+    },
+    menuWrapper: {
+        marginHorizontal: 20,
+        marginTop:20,
+        flexDirection:'row',
+        justifyContent: 'space-between',
+        alignItems: 'center',
+    },
+    profileImage: {
+        width: 52,
+        height:52,
+        borderRadius:10,
+    },
 })
 
 export default Home;
