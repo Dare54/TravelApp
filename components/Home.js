@@ -1,11 +1,15 @@
 import React from 'react';
-import {View, Text, StyleSheet} from 'react-native';
+import {View, Text, StyleSheet, Button} from 'react-native';
 import colors from '../assets/colors/colors/';
 
 const Home = ({navigation}) => {
     return (
         <View style={styles.container}>
             <Text>Hello</Text>
+            <Button
+                onPress={() => navigation.navigate("Details")}
+                title="Click here"
+            />
         </View>
     );
 };
