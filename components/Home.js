@@ -1,5 +1,5 @@
 import React from 'react';
-import {View, Text, StyleSheet, Image, ScrollView} from 'react-native';
+import {View, Text, StyleSheet, Image, ScrollView, ImageBackground} from 'react-native';
 import colors from '../assets/colors/colors/';
 import Feather from '@expo/vector-icons/Feather';
 import activitiesData from "../assets/Data/activitiesData";
@@ -9,13 +9,31 @@ import discoverData from "../assets/Data/discoverData";
 import { SafeAreaView } from 'react-native-safe-area-context';
 import profile from "../assets/Images/person.png";
 import { FlatList, TouchableOpacity } from 'react-native-gesture-handler';
+import Ionicons from '@expo/vector-icons/Ionicons';
 
 const Home = ({navigation}) => {
 
-    const renderDiscoverItem = () => {
+    const renderDiscoverItem = ({item}) => {
         return (
-            <TouchableOpacity>
-                
+            <TouchableOpacity
+                onPress={() => 
+                   navigation.navigate ('Details', {
+                    item: item,
+                   })
+                }
+                >
+                <ImageBackground
+                    source={item.image}
+                    style={[styles.discoverItem, {marginLeft: item.id === 'discover-1' ? 20 : 0},
+                    ]}
+                    imageStyle={styles.discoverItemImage}
+                >
+                    <Text style={styles.discoverItemTitle}>{item.title}</Text>
+                    <View style={styles.discoverItemLocationWrapper}>
+                        <Ionicons name="location" size={24} color={colors.white}/>
+                        <Text style={styles.discoverItemLocationText}>{item.location}</Text>
+                    </View>
+                </ImageBackground>
             </TouchableOpacity>
         )
     }
@@ -78,15 +96,17 @@ const styles = StyleSheet.create({
         borderRadius:10,
     },
     discoverWrapper: {
-        marginHorizontal:20,
+        //marginHorizontal:20,
         marginTop:20,
     },
 
     discoverTitle: {
+        marginHorizontal:20,
         fontFamily: 'Lato-Bold',
         fontSize:32,
     },
     discoverCategoriesWrapper: {
+        marginHorizontal:20,
         flexDirection: 'row',
         marginTop:20,
     },
@@ -96,6 +116,36 @@ const styles = StyleSheet.create({
         fontSize:16,
         color:colors.grey
     },
-})
+    discoverItemsWrapper: {
+        paddingVertical: 20,
+    },
+    discoverItem: {
+        width: 170,
+        height: 250,
+        justifyContent: 'flex-end',
+        paddingHorizontal: 10,
+        paddingVertical: 15,
+        marginRight: 20,
+    },
+    discoverItemImage: {
+        borderRadius: 20,
+    },
+    discoverItemTitle: {
+        fontFamily: 'Lato-Bold',
+        fontSize: 18,
+        color: colors.white,
+    },
+    discoverItemLocationWrapper: {
+        flexDirection: 'row',
+        alignItems: 'center',
+        marginTop: 5,
+    },
+    discoverItemLocationText: {
+        marginLeft: 5,
+        fontFamily: 'Lato-Bold',
+        fontSize: 14,
+        color: colors.white,
+    },
+});
 
 export default Home;
