@@ -1,4 +1,4 @@
-const discoveryData = [
+const discoverData = [
     {
         id: 'discover-1',
         title: 'Kayaking in the Tofino Sea',
@@ -27,4 +27,4 @@ const discoveryData = [
     },
   ];
   
-  export default discoveryData;
+  export default discoverData;

@@ -1,4 +1,4 @@
-const discoveryCategoriesData = [
+const discoverCategoriesData = [
     {
         id: 'discover-categories-1',
     text: 'All',
@@ -17,4 +17,4 @@ const discoveryCategoriesData = [
     },
 ];
 
-export default discoveryCategoriesData;
+export default discoverCategoriesData;
