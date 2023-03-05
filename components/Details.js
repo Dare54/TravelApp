@@ -21,16 +21,20 @@ const Details = ({route, navigation}) => {
                     <TouchableOpacity style={styles.backIcon} onPress={() => navigation.goBack()}>
                     <Ionicons name="ios-chevron-back" size={32} color= {colors.white} />
                     </TouchableOpacity>
-                    <View style={styles.titleWrapper}>
+                    <View style={styles.titlesWrapper}>
                         <Text style={styles.itemTitle}>{item.title}</Text>
                         <View style={styles.locationWrapper}>
                         <Ionicons name="location" size={24} color={colors.white}/>
                         <Text style={styles.locationText}></Text>
                         </View>
-
                     </View>
-                </ImageBackground>
-            <View style={styles.descriptionWrapper}></View>
+            </ImageBackground>
+            <View style={styles.descriptionWrapper}>
+                <View style={styles.heartWrapper}>
+                    <Ionicons name="heart" size={32} color= {colors.orange} />
+                </View>
+            </View>
+                    
         </View>
     );
 };
@@ -54,13 +58,44 @@ const styles = StyleSheet.create({
         marginLeft: 20,
         marginTop: 60,
     },
-    tittlesWrapper: {
+    titlesWrapper: {
         marginHorizontal: 20,
         marginBottom: 40,
     },
-    itemTitle: {},
-    locationWrapper: {},
-    locationText: {},
+    itemTitle: {
+        fontFamily: 'Lato-Bold',
+        fontSize: 32,
+        color: colors.white,
+    },
+    locationWrapper: {
+        flexDirection: 'row',
+        alignItems: 'center',
+        marginTop: 5,
+    },
+    locationText: {
+        fontFamily: 'Lato-Bold',
+        fontSize: 16,
+        color: colors.white,
+    },
+    heartWrapper: {
+        position: 'absolute',
+        right: 40,
+        top: -30,
+        width: 64,
+        height: 64,
+        backgroundColor: colors.white,
+        borderRadius: 64,
+        justifyContent: 'center',
+        alignItems: 'center',
+        shadowColor: "#000000",
+        shadowOffset: {
+            width: 0,
+            height: 2,
+        },
+    shadowOpacity:  0.17,
+    shadowRadius: 3.05,
+    elevation: 4,
+    },
 });
 
 export default Details;
