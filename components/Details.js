@@ -37,8 +37,33 @@ const Details = ({route, navigation}) => {
                     <Text style={styles.descriptionTitle}>Description</Text>
                     <Text style={styles.descriptionText}>{item.description}</Text>
                 </View>
-            </View>
-                    
+                <View style={styles.infoWrapper}>
+                    <View style={styles.infoItem}>
+                        <Text style={styles.infoTitle}>PRICE</Text>
+                        <View style={styles.infoTextWrapper}>
+                            <Text style={styles.infoText}>${item.price}</Text>
+                            <Text style={styles.infoSubText}>/person</Text>
+                        </View>
+                    </View>
+                    <View style={styles.infoItem}>
+                        <Text style={styles.infoTitle}>RATING</Text>
+                        <View style={styles.infoTextWrapper}>
+                            <Text style={styles.infoText}>${item.rating}</Text>
+                            <Text style={styles.infoSubText}>/5</Text>
+                        </View>
+                    </View>
+                    <View style={styles.infoItem}>
+                        <Text style={styles.infoTitle}>DURATION</Text>
+                        <View style={styles.infoTextWrapper}>
+                            <Text style={styles.infoText}>${item.duration}</Text>
+                            <Text style={styles.infoSubText}> hours</Text>
+                        </View>
+                    </View>
+                </View>
+                <TouchableOpacity style={styles.buttonWrapper} onPress={() => alert('You booked a trip!')}>
+                    <Text style={styles.buttonText}>Book Now</Text>
+                </TouchableOpacity>
+            </View>        
         </View>
     );
 };
@@ -55,7 +80,7 @@ const styles = StyleSheet.create({
     descriptionWrapper: {
         flex: 1,
         backgroundColor: colors.white,
-        marginTop: -20,
+        marginTop: -50,
         borderRadius: 25,
     },
     backIcon: {
@@ -64,7 +89,7 @@ const styles = StyleSheet.create({
     },
     titlesWrapper: {
         marginHorizontal: 20,
-        marginBottom: 40,
+        marginBottom: 60,
     },
     itemTitle: {
         fontFamily: 'Lato-Bold',
@@ -110,11 +135,51 @@ const styles = StyleSheet.create({
         color: colors.black,
     },
     descriptionText: {
-        marginTop: 20,
+        marginTop: 10,
         fontFamily: 'Lato-Regular',
         fontSize: 16,
         color: colors.darkGrey,
-        height: 85,
+        height: 70,
+    },
+    infoWrapper: {
+        flexDirection: 'row',
+        marginHorizontal: 20,
+        marginTop: 20,
+        justifyContent: 'space-between',
+    },
+    infoItem: {},
+    infoTitle: {
+        fontFamily: 'Lato-Bold',
+        fontSize: 12,
+        color: colors.grey,
+    },
+    infoTextWrapper: {
+        flexDirection: 'row',
+        alignItems: 'flex-end',
+        marginTop: 5,
+    },
+    infoText: {
+        fontFamily: 'Lato-Bold',
+        fontSize: 24,
+        color: colors.orange,
+    },
+    infoSubText: {
+        fontFamily: 'Lato-Bold',
+        fontSize: 14,
+        color: colors.grey,
+    },
+    buttonWrapper: {
+        marginHorizontal: 20,
+        marginTop: 40,
+        backgroundColor: colors.orange,
+        alignItems: 'center',
+        paddingVertical: 15,
+        borderRadius: 10,
+    },
+    buttonText: {
+        fontFamily: 'Lato-Bold',
+        fontSize: 18,
+        color: colors.white,
     },
 });
 
